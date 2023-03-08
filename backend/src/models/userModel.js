@@ -59,13 +59,6 @@ const UserSchema = mongoose.Schema({
       },
       {
         validator: function (value) {
-          // Check for at least one special character
-          return /[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/.test(value);
-        },
-        message: 'Password must contain at least one special character'
-      },
-      {
-        validator: function (value) {
           // Check for minimum length of 8 characters
           return value.length >= 8;
         },
@@ -106,6 +99,9 @@ const UserSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Product'
   }],
+  refreshToken: {
+    type: String,
+  }
 
 }, { versionKey: false, timestamps: true });
 

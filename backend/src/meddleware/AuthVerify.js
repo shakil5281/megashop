@@ -25,8 +25,18 @@ const authVerify = asyncHandler(async (req, res, next) => {
         res.status(401)
         throw new Error('Invalid token')
     } 
-
-
 })
 
-module.exports = authVerify
+
+const isAdmin = asyncHandler(async (req, res, next) =>{
+    const {email} = req.user;
+    const adminUser = await User.findOne({email});
+    if(adminUser.role !== 'admin'){
+        throw new Error('You are not an administrator');
+    }else{
+        next()
+    }
+})
+
+
+module.exports = {authVerify, isAdmin}

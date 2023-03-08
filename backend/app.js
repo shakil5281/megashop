@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const userRouter = require('./src/router/userapi')
 const {errorHendler, notFound} = require('./src/meddleware/errorHendler')
+const cookieParser = require('cookie-parser')
 
 
 // external requirements
@@ -11,6 +12,7 @@ const {errorHendler, notFound} = require('./src/meddleware/errorHendler')
 
 //
 app.use(express.json())
+app.use(cookieParser())
 
 
 

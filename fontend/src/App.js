@@ -1,9 +1,15 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
+import { Navber } from './components'
+import ApiLoading from './components/layout/apiLoading'
+
 
 const App = () => {
   return (
     <>
-      My Mage shop Shoping House.
+        <ApiLoading />
+        <Navber />
+        <Outlet />
     </>
   )
 }
