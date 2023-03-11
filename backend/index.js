@@ -15,3 +15,5 @@ connectDB()
 
 
 app.listen(PORT, ()=> console.log(`Server listening on- ${PORT}`.yellow))
+
+module.exports = app

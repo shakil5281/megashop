@@ -18,14 +18,14 @@ const Categorymanu = () => {
             {(popupState) => (
               <React.Fragment>
                 <StyledButton sx={{ paddingRight: 3 }} color='inherit' startIcon={<DashboardCustomizeRoundedIcon />} endIcon={<ArrowDropDownIcon />} disableRipple  {...bindTrigger(popupState)}>
-                  Dashboard
+                  Categories
                 </StyledButton>
                 <Menu sx={{ marginTop: 2, padding: 3 }} {...bindMenu(popupState)}>
                   {
                     ['phone', 'Fashion', 'Electronice', 'Computer', 'Shoping'].map((item => (
-                      <MenuItem sx={{width: '250px', padding: 1.5}} onClick={popupState.close}>
-                        <Typography sx={{width: '200px'}} variant="inherit">{item}</Typography>
-                        <ListItemIcon sx={{float: 'right', display: 'flex'}}>
+                      <MenuItem sx={{ width: '250px', padding: 1.5 }} onClick={popupState.close}>
+                        <Typography sx={{ width: '200px' }} variant="inherit">{item}</Typography>
+                        <ListItemIcon sx={{ float: 'right', display: 'flex' }}>
                           <ArrowRightRoundedIcon />
                         </ListItemIcon>
                       </MenuItem>
